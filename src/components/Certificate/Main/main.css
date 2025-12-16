@@ -1,0 +1,86 @@
+/* CERTIFICATES  */
+
+.suptitle {
+    color: #384D96;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.achievment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.cards img {
+    width: 100%;
+    max-width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+}
+
+.cards img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* MEDIA   */
+
+@media (max-width: 1024px) {
+    .suptitle {
+        font-size: 1.8rem;
+    }
+
+    .cards {
+        gap: 25px;
+    }
+
+
+    .cards img {
+        max-width: 240px;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+    .suptitle {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .achievment {
+        flex-direction: column;
+    }
+
+    .cards {
+        gap: 20px;
+
+    }
+
+    .cards img {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .suptitle {
+        font-size: 1.2rem;
+    }
+
+    .cards {
+
+        align-items: center;
+        gap: 15px;
+
+    }
+
+    .cards img {
+        max-width: 250px;
+        width: 90%;
+    }
+}

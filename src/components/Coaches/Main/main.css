@@ -1,0 +1,150 @@
+/* COACHES  */
+
+.coaches_2 {
+    padding: 80px 5%;
+    text-align: center;
+
+}
+
+.top__block_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.suptitle_2 {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #586DB7;
+}
+
+.suptitle_2::after {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    background-color: #586DB7;
+    width: 700px;
+    max-width: 80%;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+
+.suptitle_2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2042a4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.top_text_2 {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-size: 17px;
+    color: #444;
+    line-height: 1.7;
+}
+
+.card__box_2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.card_wrapper_2 {
+    background-color: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 320px;
+    transition: all 0.35s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.card_wrapper_2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card_wrapper_2 img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-bottom: 4px solid #2042a4;
+    transition: transform 0.4s ease;
+}
+
+.card_wrapper_2:hover img {
+    transform: scale(1.05);
+}
+
+.status_2 {
+    margin-top: 14px;
+    color: #2042a4;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Имя */
+.name_2 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #111;
+    margin: 10px 0 25px;
+}
+
+
+/* Media  */
+@media (max-width: 992px) {
+    .suptitle_2 {
+        font-size: 28px;
+    }
+
+    .suptitle_2::after {
+        display: none;
+    }
+
+    .top_text_2 {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .coaches_2 {
+        padding: 60px 20px;
+    }
+
+    .card_wrapper_2 img {
+        height: 280px;
+    }
+
+    .name_2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .suptitle_2 {
+        font-size: 24px;
+    }
+
+    .top_text_2 {
+        font-size: 15px;
+    }
+
+    .card_wrapper_2 {
+        max-width: 100%;
+    }
+
+
+}

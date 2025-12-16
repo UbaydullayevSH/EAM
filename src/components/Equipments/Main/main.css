@@ -1,0 +1,86 @@
+/* EQUIPMENTS  */
+.sup_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 35px;
+}
+
+.sup__text {
+    color: #585858;
+}
+
+.btn-switch {
+    display: flex;
+    column-gap: 25px;
+}
+
+.switch_1 {
+    background: none;
+    border: none;
+    color: #586DB7;
+}
+
+.switch_2 {
+    background: none;
+    border: none;
+    color: #586DB7;
+}
+
+.carousel {
+    display: flex;
+    gap: 12px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    height: 200px;
+}
+
+.carousel__img {
+    width: 22%;
+    max-height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+
+.carousel__img:hover {
+    transform: scale(1.05);
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+    .carousel__img {
+        width: 30%;
+        max-height: 100px;
+    }
+
+    .btn-switch{
+        padding: 5px;
+    }
+
+    .sup__text {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel__img {
+        width: 45%;
+        max-height: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel__img {
+        width: 90%;
+        max-height: 80px;
+    }
+}

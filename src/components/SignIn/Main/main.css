@@ -1,0 +1,101 @@
+/* SignIn wrapper */
+.signin_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+/* Card */
+.signin_card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Logo */
+.signin_logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+/* Title & Subtitle */
+.signin_title {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+.signin_subtitle {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Language Switch */
+.signin_lang-switch {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.signin_lang-btn {
+  padding: 5px 10px;
+  border: none;
+  background: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.signin_lang-btn.active {
+  background: #1976d2;
+  color: #fff;
+}
+
+/* Field */
+.signin_field {
+  margin-bottom: 15px;
+  text-align: left;
+}
+.signin_field input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+.signin_error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 3px;
+}
+
+/* Actions */
+.signin_actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.btn.signin_primary {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn.signin_primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btn.signin_ghost {
+  background: #fff;
+  color: #1976d2;
+  border: 1px solid #1976d2;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,225 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #384D96;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1500;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+.container__header {
+  width: 100%;
+  max-width: 1267px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header__logo img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.header_suptitle {
+  color: #C1C9E8;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.burger-menu-item a {
+  text-decoration: none;
+  color: #fff;
+
+}
+
+
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.header__block {
+  display: flex;
+  column-gap: 100px;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.header_span {
+  color: #fff;
+}
+
+.header_btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  color: #384D96;
+  background: #fff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.header_btn:hover {
+  background: #C1C9E8;
+  color: #fff;
+}
+
+/* Кнопка внутри бургера */
+.burger-btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+  color: #384D96;
+  background: #fff;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.burger-btn:hover {
+  background: #C1C9E8;
+  color: #fff;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: #8897CC;
+  border-radius: 25px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.lang-btn:hover {
+  background: #fff;
+  color: #384D96;
+}
+
+/* === BURGER MENU === */
+.burger-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger-wrapper span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.burger-wrapper span:nth-child(1) {
+  width: 100%;
+}
+
+.burger-wrapper span:nth-child(2) {
+  width: 60%;
+}
+
+.burger-wrapper span:nth-child(3) {
+  width: 40%;
+}
+
+.burger-wrapper.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(12px);
+  width: 100%;
+}
+
+.burger-wrapper.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burger-wrapper.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-12px);
+  width: 100%;
+}
+
+.burger-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #384D96;
+  list-style: none;
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.burger-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.burger-menu-item {
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.burger-menu-item:hover {
+  color: #C1C9E8;
+}
+
+.header__btn{
+  background: none;
+  border: none;
+}
+
+/* === RESPONSIVE === */
+@media(max-width:1024px) {
+  .header__block {
+    display: none;
+  }
+
+  .lang-btn {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .header_suptitle {
+    display: none;
+  }
+}

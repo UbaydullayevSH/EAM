@@ -1,0 +1,262 @@
+/* Header */
+.header_2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #384D96;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1500;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+.container__header_2 {
+  width: 100%;
+  max-width: 1267px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.header_2__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.header_2__logo img {
+  margin: 0;
+}
+
+.header_2_suptitle {
+  color: #C1C9E8;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin_btn {
+  margin: 0;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+}
+
+
+.header_2__nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  min-width: 0;
+}
+
+.header_2__block {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.admin_info {
+  color: #fff;
+  white-space: nowrap;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  border-radius: 25px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.lang-btn:hover {
+  background: #fff;
+  color: #384D96;
+}
+
+/* BURGER MENU  */
+.burger__menu {
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.burger__menu .bar {
+  height: 4px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.burger__menu .bar:nth-child(1) {
+  width: 30px;
+}
+
+.burger__menu .bar:nth-child(2) {
+  width: 22px;
+}
+
+.burger__menu .bar:nth-child(3) {
+  width: 16px;
+}
+
+.burger__menu.active .bar:nth-child(1) {
+  transform: rotate(45deg);
+  width: 30px;
+  position: relative;
+  top: 8px;
+}
+
+.burger__menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.burger__menu.active .bar:nth-child(3) {
+  transform: rotate(-45deg);
+  width: 30px;
+  position: relative;
+  top: -10px;
+}
+
+
+.burger__menu.mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .burger__menu.mobile {
+    display: flex;
+  }
+}
+
+.burger__menu.desktop {
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .burger__menu.desktop {
+    display: flex;
+  }
+}
+
+.nav-vertical {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 18%;
+  background: #384D96;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  color: #fff;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-vertical.active {
+  display: block;
+  opacity: 1;
+}
+
+.nav-vertical ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item {
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+  font-weight: 500;
+  color: #fff;
+}
+
+.nav-item:hover {
+  background: #f1f1f1;
+  color: #384D96;
+}
+
+@media (max-width: 768px) {
+  .nav-vertical {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 60%;
+    margin-top: 32px;
+    background: #384D96;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    transform: translateY(-100%);
+    max-height: 70vh;
+    overflow-y: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-vertical.active {
+    transform: translateY(0);
+    display: block;
+    opacity: 1;
+  }
+
+  .nav-vertical ul {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    margin: 0;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+}
+
+@media (min-width: 769px) {
+  .container__header_2 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header_2__logo,
+  .header_2__nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-vertical {
+    width: 20%;
+    transition: opacity 0.3s ease;
+  }
+}
