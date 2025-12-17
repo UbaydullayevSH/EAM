@@ -13,8 +13,8 @@ export default function Main({ status = "ok" }) {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || "uz");
   const [step, setStep] = useState("loader");
-  const BASE_URL = "http://172.20.10.2:4005/api";
-    const navigate = useNavigate();
+  const BASE_URL = "http://172.20.10.4:4005/api";
+  const navigate = useNavigate();
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -151,8 +151,8 @@ export default function Main({ status = "ok" }) {
               UZ
             </button>
 
-            <button onClick={goToSignIn} type="button" className="SignIn__button" disabled={loading}>
-              {loading ? t("wrap.loading") : t("wrap.SignIn")}
+            <button onClick={goToSignIn} type="button" className="SignIn__button">
+              {t("wrap.SignIn")}
             </button>
           </div>
 

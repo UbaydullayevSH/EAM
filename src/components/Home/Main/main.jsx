@@ -52,7 +52,7 @@ const coaches = [
   { img: coach_7, statusKey: "coach_status", name: "Юсупов Шамшиддин" },
 ];
 
-const BASE_IP = "http://172.20.10.2:4005";
+const BASE_IP = "http://172.20.10.4:4005";
 
 // Default statistics — minimal; will be updated by API
 const defaultStats = [

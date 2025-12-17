@@ -5,7 +5,7 @@ import "../../Factories/Main/main.css";
 
 function Factories() {
   const { t } = useTranslation();
-  const BASE_IP = "http://172.20.10.2:4005/api";
+  const BASE_IP = "http://172.20.10.4:4005/api";
 
   const [factories, setFactories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -56,10 +56,10 @@ function Factories() {
       <div className="factories-list">
         {factories.map((factory, index) => (
           <div key={factory._id || index} className="factory-card">
-            <p><strong> {t("factory.name")}Имя: </strong> {factory.subname || "—"}</p>
-            <p><strong> {t("factory.address")}Адрес: </strong> {factory.location || "—"}</p>
-            <p><strong> {t("factory.occupation")}Деятельность: </strong> {factory.appointment || "—"}</p>
-            <p><strong>STIRID: </strong> {factory.stirid || "—"}</p>
+            <p><strong> {t("factory.name")} </strong> {factory.subname || "—"}</p>
+            <p><strong> {t("factory.address")} </strong> {factory.location || "—"}</p>
+            <p><strong> {t("factory.occupation")}</strong> {factory.appointment || "—"}</p>
+            <p><strong>{t("factory.stirId")} </strong> {factory.stirid || "—"}</p>
 
             <button className="show-btn" onClick={() => openModal(factory)}>
               {t("show")}

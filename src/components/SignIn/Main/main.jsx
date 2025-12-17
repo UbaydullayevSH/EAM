@@ -4,23 +4,34 @@ import logo from "../../../assets/images/icons/energo_logo.svg";
 import { useTranslation } from "react-i18next";
 import AdminContext from "../../Admin/Context/AdminContext.jsx";
 import { useNavigate } from "react-router-dom";
+import "react-phone-input-2/lib/style.css";
+import PhoneInput from "react-phone-input-2";
 import "../Main/main.css"
 
 export default function Main({ status = "ok" }) {
-    const { t, i18n } = useTranslation();
-    const [lang, setLang] = useState(i18n.language || "uz");
+    const { t } = useTranslation();
+    const [showPassword, setShowPassword] = useState(false);
     const [adminContact, setAdminContact] = useState("");
     const [adminPassword, setAdminPassword] = useState("");
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
-    const BASE_URL = "http://172.20.10.2:4005/api";
+    const BASE_URL = "http://172.20.10.4:4005/api";
     const navigate = useNavigate();
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-        setLang(lng);
+
+    // =======================
+    // FORM DATA
+    // =======================
+    const [formData, setFormData] = useState({
+        telephoneNumber: "",
+    });
+
+    const handlePhoneChange = (phone) => {
+        setAdminContact(phone);
+        setFormData((prev) => ({ ...prev, telephoneNumber: phone }));
     };
+
 
     const goBack = () => {
         navigate("/");
@@ -28,7 +39,7 @@ export default function Main({ status = "ok" }) {
 
     const validate = () => {
         const errs = {};
-        if (!adminContact.trim()) errs.adminContact = t("wrap.enter_admin_name");
+        if (!adminContact.trim()) errs.adminContact = t("wrap.enter_admin_contact");
         if (!adminPassword.trim()) errs.adminPassword = t("wrap.enter_password");
         return errs;
     };
@@ -89,37 +100,18 @@ export default function Main({ status = "ok" }) {
                 <form className="signin_card" onSubmit={handleSignIn} noValidate>
                     <img src={logo} alt="logo" className="signin_logo" />
 
-                    {/* Языки */}
-                    <div className="signin_lang-switch">
-                        <button
-                            type="button"
-                            className={`signin_lang-btn ${lang === "ru" ? "active" : ""}`}
-                            onClick={() => changeLanguage("ru")}
-                        >
-                            RU
-                        </button>
-                        <button
-                            type="button"
-                            className={`signin_lang-btn ${lang === "uz" ? "active" : ""}`}
-                            onClick={() => changeLanguage("uz")}
-                        >
-                            UZ
-                        </button>
-                    </div>
-
                     <h1 className="signin_title">{t("wrap.security")}</h1>
                     <p className="signin_subtitle">{t("wrap.confirmation")}</p>
 
-                    {/* Admin Name */}
-                    <div className={`signin_field ${errors.adminContact ? "has-error" : ""}`}>
-                        <label>{t("wrap.name0fAdmin")}</label>
-                        <input
-                            value={adminContact}
-                            onChange={(e) => setAdminContact(e.target.value)}
+                    {/* PhoneInput */}
+                    <div className="form-group">
+                        <label>{t("form.phone_number")}</label>
+                        <PhoneInput
+                            country="uz"
+                            value={formData.telephoneNumber}
+                            onChange={handlePhoneChange}
+                            inputStyle={{ width: "100%", height: "40px", fontSize: "16px" }}
                         />
-                        {errors.adminContact && (
-                            <div className="signin_error">{errors.adminContact}</div>
-                        )}
                     </div>
 
                     {/* Password */}
@@ -128,7 +120,7 @@ export default function Main({ status = "ok" }) {
                     >
                         <label>{t("wrap.password")}</label>
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             value={adminPassword}
                             onChange={(e) => setAdminPassword(e.target.value)}
                         />
@@ -136,6 +128,13 @@ export default function Main({ status = "ok" }) {
                             <div className="signin_error">{errors.adminPassword}</div>
                         )}
                     </div>
+                    <button
+                        type="button"
+                        className="icon-toggle"
+                        onClick={() => setShowPassword(!showPassword)}
+                    >
+                        {showPassword ? t("wrap.hide") : t("wrap.show")}
+                    </button>
 
                     <div className="signin_actions">
                         <button type="submit" className="btn signin_primary" disabled={loading}>

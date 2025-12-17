@@ -9,14 +9,14 @@
   "nav_home": "Bosh sahifa",
   "nav_coaches": "Mutaxassislar",
   "nav_pictures": "Rasmlar",
-   "nav_factories":"Zavodlar",
+  "nav_factories": "Zavodlar",
   "nav_about": "Biz Haqimizda",
   "nav_certificates": "Sertifikatlar",
   "nav_settings": "Sozlamalar",
   "nav_profile": "Profil",
   "nav_requests": "So'rovlar",
   "nav_instruments": "Instrumentlar",
-  "nav_news": "Yangiliklar",
+  "nav_news": "Sertifikatlar",
   "nav_contacts": "Kontaktlar",
   "admin_greeting": "Salom!",
   "about_us": "Biz Haqimizda",
@@ -154,16 +154,14 @@
     "fields.name.error": "Iltimos habaringizni to'liq yozing",
     "errorMsg": "Ma'lumotlar yuborilmadi"
   },
-
-   "factoryCard": {
+  "factoryCard": {
     "number": "Telefon raqam",
     "email_2": "Elektron pochta",
     "delete": "O'chirish",
     "name": "Ism",
     "message": "Xabar"
   },
-
-  "factories_title":"Zavodlar",
+  "factories_title": "Zavodlar",
   "wrap": {
     "security": "Xavfsizlik — administrator kirishi",
     "name0fAdmin": "Administratorning ismi",
@@ -177,17 +175,20 @@
     "show": "Ko'rsatish",
     "loading": "yuklash....",
     "SignUp": "Ro'yxatdan o'tish",
-    "SignIn":"Kirish",
+    "SignIn": "Kirish",
     "confirmation": "Davom etish uchun administrator ma'lumotlarini tasdiqlang.",
     "serverError": "Yuborishda xato",
     "invalid_or_backend_down": "Parol xato berilgan",
     "enter_admin_name": "Iltimos ismingizni kiriting",
     "enter_password": "Iltimos parolni kiriting",
-    "enter_contact": "Iltimos kontaktingizni kiriting"
+    "enter_contact": "Iltimos kontaktingizni kiriting",
+    "back": "Orqaga",
+    "contactOfAdmin": "Administratorning kontakti"
   },
-   "factory": {
-    "name": "Ism",
-    "address": "Manzil",
-    "occupation": "Faoliyat turi"
+  "factory": {
+    "name": "Ism:",
+    "address": "Manzil:",
+    "occupation": "Faoliyat turi:",
+    "stirId": "Stir raqam:"
   }
 }

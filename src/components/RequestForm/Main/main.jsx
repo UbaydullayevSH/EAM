@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 function RequestForm() {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || "uz");
-  const BASE_URL = "http://172.20.10.2:4005/api";
+  const BASE_URL = "http://172.20.10.4:4005/api";
 
   const [formData, setFormData] = useState({
     name: "",

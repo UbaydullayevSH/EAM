@@ -12,7 +12,7 @@ function Form() {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || "uz");
 
-  const BASE_URL = "http://172.20.10.2:4005/api";
+  const BASE_URL = "http://172.20.10.4:4005/api";
 
   const navigate = useNavigate();
   const goToHome = () => navigate("/");
