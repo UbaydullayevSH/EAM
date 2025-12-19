@@ -13,11 +13,9 @@ function Settings() {
     const saved = localStorage.getItem("settingsForm");
     const defaults = {
       domain: "eauditm.uz",
-      siteUrl: "https://example.com",
+      siteUrl: "https://www.eauditm.uz/",
       siteName: "Energo Audit management",
-      adminUrl: "http://localhost:3000/Admin",
-      adminEmail: "admin@example.com",
-      adminContact: "",
+      adminUrl: "https://www.eauditm.uz/admin",
       ceo: "SSA&Co.",
     };
     return saved ? { ...defaults, ...JSON.parse(saved) } : defaults;

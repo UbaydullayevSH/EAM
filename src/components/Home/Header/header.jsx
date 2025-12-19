@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 const menuItems = [
   { nameKey: "nav_home", id: "bosh-sahifa" },
   { nameKey: "nav_coaches", id: "coaches" },
-  { nameKey: "nav_about", id: "hero" },
-  { nameKey: "nav_news", id: "yangiliklar" },
+  { nameKey: "nav_about", id: "biz-haqimizda" },
+  { nameKey: "nav_news", id: "sertifikatlar" },
   { nameKey: "nav_contacts", id: "kontaktlar" },
 ];
 
