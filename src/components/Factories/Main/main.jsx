@@ -5,7 +5,7 @@ import "../../Factories/Main/main.css";
 
 function Factories() {
   const { t } = useTranslation();
-  const BASE_IP = "http://172.20.10.4:4005/api";
+  const BASE_IP = "http://89.39.95.70:4005/api";
 
   const [factories, setFactories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -71,10 +71,10 @@ function Factories() {
       {selected && (
         <div className="modal">
           <div className="modal-content">
-            <h2>Name: {selected.subname || "—"}</h2>
-            <p><strong>Адрес: </strong> {selected.location || "—"}</p>
-            <p><strong>Деятельность: </strong> {selected.appointment || "—"}</p>
-            <p><strong>STIR: </strong> {selected.stirid || "—"}</p>
+            <h2>{t("factories.name")}<strong>:</strong> {selected.subname || "—"}</h2>
+            <p> {t("factories.location")}<strong>: </strong> {selected.location || "—"}</p>
+            <p>{t("factories.appointment")}<strong>: </strong> {selected.appointment || "—"}</p>
+            <p>{t("factories.stirid")}<strong>: </strong> {selected.stirid || "—"}</p>
             <button onClick={closeModal}>{t("modal.close")}</button>
           </div>
         </div>

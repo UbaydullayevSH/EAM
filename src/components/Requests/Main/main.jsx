@@ -6,8 +6,7 @@ import "../../Requests/Main/main.css";
 function Requests() {
   const { t } = useTranslation();
 
-  // ✅ ПРАВИЛЬНЫЙ URL (без дублирования)
-  const BASE_IP = "http://172.20.10.4:4005/api";
+  const BASE_IP = "http://89.39.95.70:4005/api";
 
   const [requests, setRequests] = useState([]);
   const [loading, setLoading] = useState(true);

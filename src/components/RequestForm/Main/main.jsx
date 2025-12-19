@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 function RequestForm() {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || "uz");
-  const BASE_URL = "http://172.20.10.4:4005/api";
+  const BASE_URL = "http://89.39.95.70:4005/api";
 
   const [formData, setFormData] = useState({
     name: "",
@@ -70,22 +70,25 @@ function RequestForm() {
       const data = await res.json();
       console.log("Ответ сервера:", data);
 
-      setStatusMsg(t("simpleForm.successMsg") || "Данные успешно отправлены на сервер!");
+      setStatusMsg(t("simpleForm.successMsg") || "Данные отправлены");
       setStatusType("success");
 
-      // после успешной отправки обновляем список запросов
+
       fetchRequests();
 
     } catch (err) {
-      console.error(err);
-      setStatusMsg(t("simpleForm.errorMsg") || "Ошибка отправки данных на сервер. Пожалуйста, попробуйте позже.");
-      setStatusType("error");
-    }
+  console.error("Ошибка при загрузке запросов:", err);
+  setStatusMsg(t("simpleForm.errorMsg") || "Данные не отправлены");
+  setStatusType("error");
+}
+
+
+
 
     setFormData({ name: "", email: "", contact: "", message: "" });
   };
 
-  // GET-запрос для получения всех запросов с backend
+  // GET REQUEST 
   const fetchRequests = useCallback(async () => {
     try {
       const res = await fetch(`${BASE_URL}/requests`);
@@ -94,8 +97,7 @@ function RequestForm() {
       setRequests(data);
     } catch (err) {
       console.error("Ошибка при загрузке запросов:", err);
-      setStatusMsg(t("simpleForm.errorMsg") || "Ошибка при загрузке запросов.");
-      setStatusType("error");
+
     }
   }, [BASE_URL, t, setRequests]);
 
@@ -175,7 +177,7 @@ function RequestForm() {
           type="button"
           onClick={goToHome}
           className="submit-btn"
-          style={{ marginLeft: "10px" }}
+
         >
           {t("form.btn_back")} →
         </button>

@@ -1,4 +1,4 @@
-// src/components/Admin/Main/main.jsx
+
 import React, { useState } from "react";
 import logo from "../../../assets/images/icons/energo_logo.svg";
 import { useTranslation } from "react-i18next";
@@ -16,7 +16,8 @@ export default function Main({ status = "ok" }) {
     const [errors, setErrors] = useState({});
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
-    const BASE_URL = "http://172.20.10.4:4005/api";
+
+    const BASE_URL = "http://89.39.95.70:4005/api";
     const navigate = useNavigate();
 
 
@@ -50,10 +51,12 @@ export default function Main({ status = "ok" }) {
         setErrors(validation);
         if (Object.keys(validation).length > 0) return;
 
+
+        // PUT REQUEST 
         setLoading(true);
         try {
             const res = await fetch(`${BASE_URL}/adminsignin`, {
-                method: "PUT", // backend для SignIn
+                method: "PUT", 
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ adminContact, adminPassword }),
             });
@@ -68,7 +71,6 @@ export default function Main({ status = "ok" }) {
             setSubmitted("/");
             setLoading(false);
 
-            // переход на админ-панель
             setTimeout(() => navigate("/qwertysettings"), 1000);
         } catch (err) {
             if (err.message === "INVALID_CREDENTIALS") {

@@ -20,6 +20,11 @@ function Header() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
+    const goToProfile = () => {
+    navigate("/qwertyprofile");
+  };
+
+
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [burgerOpen, setBurgerOpen] = useState(false);
   const [lang, setLang] = useState(i18n.language || "uz");
@@ -84,7 +89,7 @@ function Header() {
                 {t("admin_greeting")}
               </p>
             )}
-            <i style={{ color: "#fff" }} className="fa-regular fa-circle-user"></i>
+            <i onClick={goToProfile} style={{ color: "#fff" }} className="fa-regular fa-circle-user"></i>
           </div>
         </nav>
       </div>

@@ -18,6 +18,10 @@
   "nav_instruments": "Instrumentlar",
   "nav_news": "Sertifikatlar",
   "nav_contacts": "Kontaktlar",
+    "stir_id":"Stir raqam",
+  "title":"Korxona nomi",
+  "location":"Joylashgan manzili",
+  "appointment":"Faoliyat turi",
   "admin_greeting": "Salom!",
   "about_us": "Biz Haqimizda",
   "goals_title": "Energo Audit Management maqsad va vazifalari quyidagilardan iborat:",
@@ -60,7 +64,7 @@
   "form_submit": "Arizani yuborish",
   "form_privacy": "Ushbu shaklni yuborish orqali siz shaxsiy ma’lumotlarni qayta ishlanishiga rozilik bildirasiz.",
   "address_text": "Andijon shahri, A. Temur shoh ko’chasi, 13a-uy",
-  "address": "Manzil",
+  "address":"Manzil",
   "contacts_lead": "Agar sizda biron bir savol bo’lsa yoki qo’shimcha ma’lumot kerak bo’lsa, biz sizga yordam berishga tayyormiz. Qayta aloqa shaklini to‘ldiring yoki ko‘rsatilgan telefon raqamiga qo‘ng‘iroq qiling.",
   "contact_form_btn": "Qayta aloqa shakli",
   "settings_suptitle": "Sayt haqida ma'lumot",
@@ -115,18 +119,23 @@
     "post_activity_placeholder": "Faoliyat turini kiriting",
     "phone_number": "Telefon raqami",
     "phone_code": "+998",
-    "email": "Elektron Pochta",
     "email_placeholder": "Elektron Pochtangizni kiriting",
     "stir": "Stir raqam",
     "stir_placeholder": "Stir raqamni kiriting",
     "email_info_note": "Elektron pochta manzili sifatida biriktiriladi",
     "btn_continue": "Davom et",
-    "form_success": "Ma'lumotlar muvaffaqiyatli yuborildi!",
+    "success": "Ma'lumotlar muvaffaqiyatli yuborildi!",
+    "error":"Ma'lumotlar yuborilmadi",
     "form_fill_all": "Iltimos hamma ma’lumotlarni kiriting",
     "btn_back": "Orqaga qaytish",
-    "error": "Habar yuborilmadi",
     "validation_company": "Iltimos hamma ma'lumotlarni kiriting",
     "validation_stir": "Iltimos stir raqamni to'g'ri kiriting"
+  },
+    "factories": {
+    "name": "Ism",
+    "location": "Joylashgan manzili",
+    "appointment": "Faoliyat turi",
+    "stirid": "Stir raqam"
   },
   "modal": {
     "name_2": "Ism",
@@ -152,7 +161,10 @@
     "fields.message.label": "Xabar",
     "fields.message.placeholder": "Xabaringzni kiriting",
     "fields.name.error": "Iltimos habaringizni to'liq yozing",
-    "errorMsg": "Ma'lumotlar yuborilmadi"
+    "successMsg":"Ma'lumotlar yuborildi",
+        "fields.phone.placeholder":"Telefon raqamingizni kiriting",
+        "errorMsg":"Ma'lumotlar yuborilmadi"
+
   },
   "factoryCard": {
     "number": "Telefon raqam",

@@ -1,4 +1,4 @@
-// src/components/Settings/Main/main.jsx
+
 import React, { useState } from "react";
 import "../../Settings/Main/main.css";
 import { useTranslation } from "react-i18next";
@@ -6,14 +6,13 @@ import { useTranslation } from "react-i18next";
 function Settings() {
   const { t } = useTranslation();
 
-  // Левая часть всегда только чтение
   const isLeftReadOnly = true;
 
-  // Загружаем данные из localStorage, которые были введены админом в безопасности
+
   const [form] = useState(() => {
     const saved = localStorage.getItem("settingsForm");
     const defaults = {
-      domain: "example.com",
+      domain: "eauditm.uz",
       siteUrl: "https://example.com",
       siteName: "Energo Audit management",
       adminUrl: "http://localhost:3000/Admin",
@@ -63,7 +62,6 @@ function Settings() {
 
       <form className="settings__form" onSubmit={handleSubmit}>
         <div className="grid">
-          {/* Left card — только чтение всегда */}
           <div className="card">
             <h2>{t("settings_information")}</h2>
 

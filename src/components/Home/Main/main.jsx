@@ -52,12 +52,11 @@ const coaches = [
   { img: coach_7, statusKey: "coach_status", name: "Юсупов Шамшиддин" },
 ];
 
-const BASE_IP = "http://172.20.10.4:4005";
+const BASE_IP = "http://89.39.95.70:4005";
 
 // Default statistics — minimal; will be updated by API
 const defaultStats = [
   { labelKey: "stat_certificates", number: 0 },
-  // { labelKey: "stat_students", number: 0 },
 ];
 
 export default function Main() {
@@ -319,7 +318,7 @@ const goToRequestForm = () => {
               <ul className="search-results">
                 <li className="search-result-item">
                   <p>
-                    <b>STIR ID:</b> {factoryResult.stirid}
+                    <b>{t("stir_id")}:</b> {factoryResult.stirid}
                   </p>
                   <p>
                     <b>{t("title")}:</b> {factoryResult.subname}
@@ -483,12 +482,7 @@ const goToRequestForm = () => {
                       +998 (98) 077-04-00
                     </a>
                   </p>
-                  <p className="info-item">
-                    <strong>{t("email")}:</strong>{" "}
-                    <a href="mailto:qua.uz@mail.ru" className="contact-link">
-                      qua.uz@mail.ru
-                    </a>
-                  </p>
+                
                   <p className="info-item">
                     <strong>{t("address")}:</strong> <span>{t("address_text")}</span>
                   </p>

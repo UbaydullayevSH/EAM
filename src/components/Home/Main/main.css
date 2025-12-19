@@ -108,6 +108,7 @@ html {
     z-index: 100;
 }
 
+
 .no-results {
     padding: 12px;
     margin-top: 5px;
@@ -138,9 +139,10 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    column-gap: 30px;
     padding: 6px 8px;
     border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
 }
 
 .search-result-item:last-child {
@@ -185,11 +187,15 @@ html {
 }
 
 @media (max-width:1024px) {
-  .search-results {
-    width: 95%;       /* адаптивная ширина */
-    max-width: 345px; /* но не больше 345px */
-    margin: 0 auto;   /* центрирование */
-  }
+    .search-results {
+        width: 100%;
+        /* адаптивная ширина */
+        max-width: 305px;
+        /* но не больше 345px */
+        margin: 0 auto;
+        padding-right: 5px;
+        /* центрирование */
+    }
 }
 
 
@@ -731,11 +737,11 @@ html {
 
 
 .card_statistics {
-        background: linear-gradient(90deg, #7aa0ff, #98dfff);
+    background: linear-gradient(90deg, #7aa0ff, #98dfff);
     padding: 40px;
     border-radius: 20px;
-  
-   text-align: center;
+
+    text-align: center;
 
 }
 
@@ -834,7 +840,7 @@ html {
         max-height: 100px;
     }
 
-    .btn-switch{
+    .btn-switch {
         padding: 5px;
     }
 
