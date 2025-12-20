@@ -73,13 +73,11 @@ function Form() {
     };
 
     try {
-      const res = await fetch(`${BASE_URL}/factory`, {
+      const res = await fetch(`${BASE_URL}/api/factory`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(serverPayload),
       });
-
-      if (!res.ok) throw new Error("Server error");
 
       setStatusMsg(t("form.success"));
       setStatusType("success");
