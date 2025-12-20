@@ -5,7 +5,7 @@ import "../../Factories/Main/main.css";
 
 function Factories() {
   const { t } = useTranslation();
-  const BASE_IP = "http://89.39.95.70:4005/api";
+  const BASE_IP = "https://eamserver.eauditm.uz";
 
   const [factories, setFactories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +18,7 @@ function Factories() {
         setLoading(true);
         setError("");
 
-        const response = await fetch(`${BASE_IP}/admingetfactory`);
+        const response = await fetch(`${BASE_IP}/api/admingetfactory`);
         if (!response.ok) throw new Error(`Ошибка сервера: ${response.status}`);
 
         const data = await response.json();

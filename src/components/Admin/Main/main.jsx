@@ -13,7 +13,7 @@ export default function Main({ status = "ok" }) {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || "uz");
   const [step, setStep] = useState("loader");
-  const BASE_URL = "http://89.39.95.70:4005/api";
+  const BASE_URL = "https://eamserver.eauditm.uz";
   const navigate = useNavigate();
 
   const changeLanguage = (lng) => {
@@ -74,7 +74,7 @@ export default function Main({ status = "ok" }) {
     setLoading(true);
 
     try {
-      const res = await fetch(`${BASE_URL}/admin`, {
+      const res = await fetch(`${BASE_URL}/api/admin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ adminName, adminContact, adminPassword }),

@@ -17,7 +17,7 @@ export default function Main({ status = "ok" }) {
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 
-    const BASE_URL = "http://89.39.95.70:4005/api";
+    const BASE_URL = "https://eamserver.eauditm.uz";
     const navigate = useNavigate();
 
 
@@ -55,7 +55,7 @@ export default function Main({ status = "ok" }) {
         // PUT REQUEST 
         setLoading(true);
         try {
-            const res = await fetch(`${BASE_URL}/adminsignin`, {
+            const res = await fetch(`${BASE_URL}/api/adminsignin`, {
                 method: "PUT", 
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ adminContact, adminPassword }),

@@ -12,7 +12,7 @@ function Form() {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || "uz");
 
-  const BASE_URL = "http://89.39.95.70:4005/api";
+  const BASE_URL = "https://eamserver.eauditm.uz";
 
   const navigate = useNavigate();
   const goToHome = () => navigate("/");

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState} from "react";
 import { useTranslation } from "react-i18next";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 function RequestForm() {
   const { t, i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language || "uz");
-  const BASE_URL = "http://89.39.95.70:4005/api";
+  const BASE_URL = "https://eamserver.eauditm.uz";
 
   const [formData, setFormData] = useState({
     name: "",
@@ -17,7 +17,7 @@ function RequestForm() {
     message: "",
   });
 
-  const [, setRequests] = useState([]); // реальные запросы с backend
+
   const [statusMsg, setStatusMsg] = useState("");
   const [statusType, setStatusType] = useState("none");
 
@@ -60,7 +60,7 @@ function RequestForm() {
     }
 
     try {
-      const res = await fetch(`${BASE_URL}/requests`, {
+      const res = await fetch(`${BASE_URL}/api/requests`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -73,14 +73,11 @@ function RequestForm() {
       setStatusMsg(t("simpleForm.successMsg") || "Данные отправлены");
       setStatusType("success");
 
-
-      fetchRequests();
-
     } catch (err) {
-  console.error("Ошибка при загрузке запросов:", err);
-  setStatusMsg(t("simpleForm.errorMsg") || "Данные не отправлены");
-  setStatusType("error");
-}
+      console.error("Ошибка при загрузке запросов:", err);
+      setStatusMsg(t("simpleForm.errorMsg") || "Данные не отправлены");
+      setStatusType("error");
+    }
 
 
 
@@ -88,22 +85,6 @@ function RequestForm() {
     setFormData({ name: "", email: "", contact: "", message: "" });
   };
 
-  // GET REQUEST 
-  const fetchRequests = useCallback(async () => {
-    try {
-      const res = await fetch(`${BASE_URL}/requests`);
-      if (!res.ok) throw new Error(`Ошибка сервера: ${res.status}`);
-      const data = await res.json();
-      setRequests(data);
-    } catch (err) {
-      console.error("Ошибка при загрузке запросов:", err);
-
-    }
-  }, [BASE_URL, t, setRequests]);
-
-  useEffect(() => {
-    fetchRequests();
-  }, [fetchRequests]);
 
   return (
     <div className="simple-form-container">

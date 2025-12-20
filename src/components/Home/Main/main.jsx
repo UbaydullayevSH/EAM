@@ -52,7 +52,7 @@ const coaches = [
   { img: coach_7, statusKey: "coach_status", name: "Юсупов Шамшиддин" },
 ];
 
-const BASE_IP = "http://89.39.95.70:4005";
+const BASE_IP = "https://eamserver.eauditm.uz";
 
 // Default statistics — minimal; will be updated by API
 const defaultStats = [

@@ -6,7 +6,7 @@ import "../../Requests/Main/main.css";
 function Requests() {
   const { t } = useTranslation();
 
-  const BASE_IP = "http://89.39.95.70:4005/api";
+  const BASE_IP = "https://eamserver.eauditm.uz";
 
   const [requests, setRequests] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ function Requests() {
         setLoading(true);
         setError("");
 
-        const response = await fetch(`${BASE_IP}/adminrequests`);
+        const response = await fetch(`${BASE_IP}/api/adminrequests`);
         if (!response.ok) {
           throw new Error(`Ошибка сервера: ${response.status}`);
         }
@@ -48,7 +48,7 @@ function Requests() {
 
 const deleteRequest = async (id) => {
   try {
-     const res = await fetch(`${BASE_IP}/adminrequestsdelete/${id}`, {
+      await fetch(`${BASE_IP}/api/adminrequestsdelete/${id}`, {
       method: "DELETE",
     });
 
