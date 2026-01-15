@@ -195,7 +195,8 @@
     "enter_password": "Iltimos parolni kiriting",
     "enter_contact": "Iltimos kontaktingizni kiriting",
     "back": "Orqaga",
-    "contactOfAdmin": "Administratorning kontakti"
+    "contactOfAdmin": "Administratorning kontakti",
+    "password_length":"Parolning aniq uzunligini kiriting"
   },
   "factory": {
     "name": "Ism:",

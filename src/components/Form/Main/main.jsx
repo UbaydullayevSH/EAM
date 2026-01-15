@@ -73,7 +73,7 @@ function Form() {
     };
 
     try {
-      const res = await fetch(`${BASE_URL}/api/factory`, {
+       await fetch(`${BASE_URL}/api/factory`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(serverPayload),
